@@ -52,6 +52,6 @@ stages:
             inputs:
               azureSubscription: '$(azureSubscription)'
               appType: 'webAppLinux'  # Use 'webApp' for Windows App Service
-              # appName: '$(appName)'
+              WebAppName: '$(appName)'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
             displayName: 'Deploy to Azure Web App'
