@@ -9,9 +9,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-variables:
-- group: MyVariableGroup
-
 stages:
 - stage: Build
   displayName: 'Build Stage'
@@ -62,8 +59,8 @@ stages:
 
           - task: AzureRmWebAppDeployment@4
             inputs:
-              azureSubscription: '$(azureSubscription)'
+              azureSubscription: 'service-conection-inkoms-atlas-dev'
               appType: 'webAppLinux'  # Use 'webApp' for Windows App Service
-              WebAppName: '$(appName)'
+              WebAppName: 'inkoms-atlas-dev'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
             displayName: 'Deploy to Azure Web App'
